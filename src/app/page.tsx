@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 import { 
   Truck, 
   Recycle, 
@@ -31,9 +30,9 @@ interface Feature {
 
 
 const PackerWebsite = () => {
-  const [expandedFeature, setExpandedFeature] = useState(null);
+  const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
 
-  const [activeHotspot, setActiveHotspot] = useState(null);
+  const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
 
   const hotspots = [
     {
@@ -95,7 +94,7 @@ const PackerWebsite = () => {
     { label: "Kompatibilität", value: "Alle Fahrradtypen" }
   ];
 
-  const toggleFeature = (index) => {
+  const toggleFeature = (index: number) => {
     setExpandedFeature(expandedFeature === index ? null : index);
   };
 
